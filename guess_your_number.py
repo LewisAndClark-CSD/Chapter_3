@@ -1,29 +1,26 @@
-# Guess My Number
-#
-# The player picks a random number between 1 and 100
-# The computer tries to guess it and the player lets
-# the computer know if the guess is too high, too low
-# or right on the money
-
+# Guess your number
+#author: Bo Meers
 import random  
 
 print("\tWelcome to 'Guess Your Number'!")
 print("\nI want you to think of a number between 1 and 100.")
 print("I'll try to guess it in as few attempts as possible.\n")
 
-# set the initial values
+the_number = int(input("What's your number? "))
+tries = 1
+b = random.randint(1,100)
 
+if the_number > 100:
+    the_number = int(input("I'm pretty sure i said 1 to 100... try again "))
 
-
-# guessing loop
-
-
-
-
-
-
-
-print("I guessed it!  The number was", the_number)
-print("And it only took me", tries, "tries!\n")
+elif the_number < 1:
+    the_number = int(input("I'm pretty sure i said 1 to 100... try again "))
+                     
+while b != the_number:
+    b = random.randint(1,100)
+    tries += 1
+    
+print("\nI guessed it!  The number was", the_number)
+print("And it only took me", tries, "tries!")
   
-input("\n\nPress the enter key to exit.")
+input("\nPress the enter key to exit.")
