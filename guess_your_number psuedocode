@@ -1,0 +1,8 @@
+psuedocode for guess_your_number.py
+
+1) guess number from user
+2) find out weither it is 'higher' 'lower' or 'equal' to the number
+2a) if lower, guess a number lower than last guessed
+2b) if higher, guess a number higher than last guessed
+3) once number is guessed, ask user to press enter 
+

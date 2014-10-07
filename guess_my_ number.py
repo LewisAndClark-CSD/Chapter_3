@@ -4,7 +4,8 @@
 # The player tries to guess it and the computer lets
 # the player know if the guess is too high, too low
 # or right on the money
-
+# Edited by: Zach Golik
+# Added a limit to the amount of guesses
 import random  
 
 print("\tWelcome to 'Guess My Number'!")
@@ -17,16 +18,19 @@ guess = int(input("Take a guess: "))
 tries = 1
 
 # guessing loop
-while guess != the_number:
+while guess != the_number and tries < 10:
     if guess > the_number:
         print("Lower...")
-    else:
+    elif guess < the_number:
         print("Higher...")
-            
     guess = int(input("Take a guess: "))
     tries += 1
-
-print("You guessed it!  The number was", the_number)
-print("And it only took you", tries, "tries!\n")
+    
+if tries == 10:
+    print("Sorry, you have used all of your guesses. Good bye :(")
+    input("\n\nPress the enter key to exit.")
+else:
+    print("You guessed it!  The number was", the_number)
+    print("And it only took you", tries, "tries!\n")
   
-input("\n\nPress the enter key to exit.")
+    input("\n\nPress the enter key to exit.")
