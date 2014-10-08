@@ -1,32 +1,37 @@
-# Guess My Number
-#
-# The computer picks a random number between 1 and 100
-# The player tries to guess it and the computer lets
-# the player know if the guess is too high, too low
-# or right on the money
+# Program Name: Bo's Guessing Machine
+# Author: Bo Meers
 
-import random  
+import random
 
 print("\tWelcome to 'Guess My Number'!")
 print("\nI'm thinking of a number between 1 and 100.")
-print("Try to guess it in as few attempts as possible.\n")
+print("Try to guess it in 10 attempts.\n")
 
-# set the initial values
 the_number = random.randint(1, 100)
-guess = int(input("Take a guess: "))
+guess = int(input("Guess a number: "))
 tries = 1
+tr = 0
 
-# guessing loop
-while guess != the_number:
-    if guess > the_number:
-        print("Lower...")
-    else:
-        print("Higher...")
-            
-    guess = int(input("Take a guess: "))
-    tries += 1
+while guess != '':
 
-print("You guessed it!  The number was", the_number)
-print("And it only took you", tries, "tries!\n")
-  
-input("\n\nPress the enter key to exit.")
+    while tr < 11:
+
+        if guess < the_number:
+
+            tr += 1
+            tries += 1
+            guess = int(input("Guess higher: "))
+
+        elif guess > the_number:
+
+            tr += 1
+            tries += 1
+            guess = int(input("Guess lower: "))
+    
+        elif guess == the_number:
+            print("You guessed it! The number was", the_number)
+            print("And it only took you", tries, "tries!")
+ 
+            guess = input("\n\nPress the enter key to exit.")
+
+    print("Sorry. You didnt guess", the_number, "in 10 tries.")
