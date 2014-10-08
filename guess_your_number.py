@@ -14,7 +14,7 @@ b = random.randint(low,high)
 
 a = input("Is your number " + str(b) + " ? (higher/lower/yes) ")
 
-while b != a:
+while a != 'yes':
 
     if a == "higher":
         low = b
